@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bản đồ địa chính</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    var map = L.map('map').setView([21.12, 106.41], 17); // chỉnh tọa độ nếu cần
+    L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+      maxZoom: 21,
+      minZoom: 15,
+      tileSize: 256,
+      attribution: 'Ảnh địa chính Yết Kiêu'
+    }).addTo(map);
+  </script>
+</body>
+</html>
